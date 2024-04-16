@@ -41,22 +41,42 @@ We want to know if result depends on Sex result is a categorical variable. Sex i
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
+
+```
+
+This chart shows that males are more likely to die witht ehaverage being 60 percent and female average being below 40 perfcent.  
 
 
-  
 
 
 
-
-
-  
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+The table shows the average male deaths are higher than female deaths at 64 deaths versus female deaths at 36. 
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The Chi-squared test p-value is 0.01 which is lesser than 0.05 which means we can effectively reject the null hypothesis this means there is significant difference in death rate based on sex.
 
 
+P-value =0.0009 on the fisher exact test shows that we can reject the null hypothesis because the value is less than 0.05.
+
+The odds ratios is 2.3 to 1 this means that there is higher odds to prove that men do have a larger death rate than women do. 
 
 ## Conclusions
 
+The original question is there a difference in Korean data death rate based on sex? With the numerical and graphical results we are able to come to the conclusion there is a difference between sex and death rate, men do have a higher mortality rate and we where able to prove that within in our boxplot, numerical graphic and lastly our chi-squared test p-value = 0.01 which is less than 0.05 which gives us helps us reject the null hypothesis and prove there is a difference in sex in and death rate.
