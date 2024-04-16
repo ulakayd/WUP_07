@@ -1,7 +1,7 @@
 ---
 title: "Initial Korean covid 19"
-author: "your name here"
-date: "todays date"
+author: "davy d"
+date: "spring 2024"
 output:
   html_document: default
   pdf_document: default
@@ -27,8 +27,15 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
+# Introduction
 
+$H_0$ : There is no difference in death rate based on sex.
 
+$H_A$ : There is a difference in death rate based on sex. 
+
+## METHODS
+Variables for this study are sex and result.
+We want to know if result depends on Sex result is a categorical variable. Sex is also a categorical variable. So we use the cat~cat helper file. 
 
 
 
